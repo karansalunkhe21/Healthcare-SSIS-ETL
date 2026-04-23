@@ -10,3 +10,8 @@ SELECT TOP 5
     PATIENT, ENCOUNTERCLASS, 
     DESCRIPTION, TOTAL_CLAIM_COST
 FROM stg.STG_Encounters;
+
+
+
+SELECT COUNT(*) AS Total_Procedures
+FROM stg.STG_Procedures;

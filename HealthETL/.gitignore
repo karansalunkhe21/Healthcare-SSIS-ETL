@@ -1,0 +1,12 @@
+
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.dtsx.user
+
+# Exclude large CSV source files
+*.csv
+*.CSV
+Source Folder/
