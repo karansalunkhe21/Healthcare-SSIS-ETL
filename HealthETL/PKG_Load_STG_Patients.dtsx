@@ -1,0 +1,1962 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/21/2026 1:13:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-QBPOOF3"
+  DTS:CreatorName="DESKTOP-QBPOOF3\karan"
+  DTS:DTSID="{A01A353D-2D06-4A71-A745-1ACA6B6C5A9B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{91EBC6E3-9F12-4577-B7BE-4970C7A03AE9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{135C86E9-8162-4D24-8ACC-96A8E43237D2}"
+      DTS:ObjectName="LocalHost">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=HealthDW_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{135C86E9-8162-4D24-8ACC-96A8E43237D2}LocalHost;Trust Server Certificate=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Patients_csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F22839B7-85CD-4E17-991B-0B3DA53B5BFA}"
+      DTS:ObjectName="Patients_csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\karan\source\repos\HealthETL\HealthETL\Source Folder\Landing\patients.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{061EA6A8-1B9E-4F1E-AE3E-D3FD419EEF0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BIRTHDATE"
+              DTS:DTSID="{6D0D572E-31B8-4A74-B758-3651B1C786DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DEATHDATE"
+              DTS:DTSID="{1672295F-AD6D-47F8-8C14-FF72D201A082}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SSN"
+              DTS:DTSID="{0B6F2C7F-516D-463A-B93C-893638E96249}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DRIVERS"
+              DTS:DTSID="{24478982-7EBE-45A8-8C74-9E22890760C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PASSPORT"
+              DTS:DTSID="{E7938144-30FA-4B2F-86E4-5DE998AD6C3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PREFIX"
+              DTS:DTSID="{10D4920C-1FE4-437B-99CE-96CD9B706BCD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIRST"
+              DTS:DTSID="{EA4C17DA-ECCB-452B-904A-5A48405C17D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAST"
+              DTS:DTSID="{4CD6D39E-7224-4194-B4A1-260F78DEBEAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SUFFIX"
+              DTS:DTSID="{42A8AB55-7FA5-4D2F-944E-D2F9F168EAF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MAIDEN"
+              DTS:DTSID="{2200F613-1AF3-425E-84A5-F155C1B6D510}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MARITAL"
+              DTS:DTSID="{29A37AE7-CBA4-406C-9215-17E1F1F77DFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RACE"
+              DTS:DTSID="{5EBF5583-8E87-4734-B353-0CE45C113C54}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ETHNICITY"
+              DTS:DTSID="{6319730B-CE8D-42B2-BD6A-4FF48A22F00D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GENDER"
+              DTS:DTSID="{A9E6C30D-6E95-4559-A25D-977D035F6B65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BIRTHPLACE"
+              DTS:DTSID="{96C87191-65CA-4102-A618-C2EBC64974AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADDRESS"
+              DTS:DTSID="{D40EC4E5-7963-44CA-8BC8-AE904D2DD0BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CITY"
+              DTS:DTSID="{9AE81BBF-5E0E-4ABA-9214-282F1C7D1DD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STATE"
+              DTS:DTSID="{6E717DAE-DC23-4D53-9197-76BE22146C49}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COUNTY"
+              DTS:DTSID="{5EF3469E-83C6-48AB-A685-B8282F06233A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZIP"
+              DTS:DTSID="{8427F38C-42EE-4FDE-A812-985DBFB728E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAT"
+              DTS:DTSID="{2C9AE8CE-957E-4684-B8A5-3A6D9AE45223}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LON"
+              DTS:DTSID="{D875F870-7229-40A7-A0A3-793D79DC929D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HEALTHCARE_EXPENSES"
+              DTS:DTSID="{F0AB2DAA-13DA-49CF-9C68-AF2617970CAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HEALTHCARE_COVERAGE"
+              DTS:DTSID="{ED615798-65CC-43A2-BFCB-6BDD27B96075}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Patients CSV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6D51EF79-051C-45BD-B20E-6E2258B40947}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Patients CSV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Patients CSV\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Patients CSV\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Patients CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ETL_Load_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ETL_Load_Date"
+                      lineageId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Load_Date]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ETL_Source_File]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="ETL_Source_File"
+                      lineageId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Source_File]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Patients CSV\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Load_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Load_Date]"
+                      name="Copy of ETL_Load_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Load_Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Source_File]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Source_File]"
+                      name="Copy of ETL_Source_File"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Source_File]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Patients CSV\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Patients CSV\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Patients CSV\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Patients CSV\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Load_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Load_Date]"
+                      name="ETL_Load_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Source_File]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="12"
+                      lineageId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Source_File]"
+                      name="ETL_Source_File"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"patients.csv"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"patients.csv"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Patients CSV\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Patients CSV\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="16393"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Patients CSV\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Patients_csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Patients_csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BIRTHDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BIRTHDATE]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BIRTHDATE]"
+                      name="BIRTHDATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DEATHDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DEATHDATE]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DEATHDATE]"
+                      name="DEATHDATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[SSN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SSN]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[SSN]"
+                      name="SSN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DRIVERS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DRIVERS]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DRIVERS]"
+                      name="DRIVERS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PASSPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PASSPORT]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PASSPORT]"
+                      name="PASSPORT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PREFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PREFIX]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PREFIX]"
+                      name="PREFIX"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FIRST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIRST]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FIRST]"
+                      name="FIRST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LAST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LAST]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LAST]"
+                      name="LAST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[SUFFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SUFFIX]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[SUFFIX]"
+                      name="SUFFIX"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[MAIDEN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MAIDEN]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[MAIDEN]"
+                      name="MAIDEN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[MARITAL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MARITAL]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[MARITAL]"
+                      name="MARITAL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RACE]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[RACE]"
+                      name="RACE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ETHNICITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ETHNICITY]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ETHNICITY]"
+                      name="ETHNICITY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GENDER]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[GENDER]"
+                      name="GENDER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BIRTHPLACE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BIRTHPLACE]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BIRTHPLACE]"
+                      name="BIRTHPLACE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDRESS]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESS]"
+                      name="ADDRESS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CITY]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[STATE]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[COUNTY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[COUNTY]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[COUNTY]"
+                      name="COUNTY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ZIP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ZIP]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ZIP]"
+                      name="ZIP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LAT]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]"
+                      name="LAT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LON]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LON]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LON]"
+                      name="LON"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[HEALTHCARE_EXPENSES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HEALTHCARE_EXPENSES]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[HEALTHCARE_EXPENSES]"
+                      name="HEALTHCARE_EXPENSES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[HEALTHCARE_COVERAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HEALTHCARE_COVERAGE]"
+                      length="500"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[HEALTHCARE_COVERAGE]"
+                      name="HEALTHCARE_COVERAGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BIRTHDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="BIRTHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DEATHDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DEATHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SSN" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DRIVERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DRIVERS" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PASSPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PASSPORT" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PREFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PREFIX" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIRST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="FIRST" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LAST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="LAST" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SUFFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SUFFIX" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MAIDEN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="MAIDEN" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MARITAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="MARITAL" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="RACE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ETHNICITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ETHNICITY" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="GENDER" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BIRTHPLACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="BIRTHPLACE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDRESS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ADDRESS" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[COUNTY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="COUNTY" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ZIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="LAT" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LON]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="LON" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HEALTHCARE_EXPENSES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="HEALTHCARE_EXPENSES" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HEALTHCARE_COVERAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="HEALTHCARE_COVERAGE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Patients CSV\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[STG_Patients]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Patients CSV\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BIRTHDATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="BIRTHDATE"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BIRTHDATE]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BIRTHDATE]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DEATHDATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="DEATHDATE"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DEATHDATE]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DEATHDATE]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SSN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="SSN"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SSN]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[SSN]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DRIVERS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="DRIVERS"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DRIVERS]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DRIVERS]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PASSPORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PASSPORT"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PASSPORT]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PASSPORT]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PREFIX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PREFIX"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PREFIX]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PREFIX]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FIRST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="FIRST"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIRST]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FIRST]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LAST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="LAST"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAST]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LAST]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SUFFIX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="SUFFIX"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SUFFIX]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[SUFFIX]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MAIDEN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="MAIDEN"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MAIDEN]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[MAIDEN]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MARITAL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="MARITAL"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARITAL]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[MARITAL]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RACE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="RACE"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RACE]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[RACE]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ETHNICITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ETHNICITY"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETHNICITY]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ETHNICITY]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GENDER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="GENDER"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[GENDER]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BIRTHPLACE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="BIRTHPLACE"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BIRTHPLACE]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BIRTHPLACE]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDRESS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ADDRESS"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESS]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COUNTY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="COUNTY"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COUNTY]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[COUNTY]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ZIP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ZIP"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZIP]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ZIP]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LAT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="LAT"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LON]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="LON"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LON]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LON]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HEALTHCARE_EXPENSES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="HEALTHCARE_EXPENSES"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HEALTHCARE_EXPENSES]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[HEALTHCARE_EXPENSES]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HEALTHCARE_COVERAGE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="HEALTHCARE_COVERAGE"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HEALTHCARE_COVERAGE]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[HEALTHCARE_COVERAGE]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ETL_Load_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of ETL_Load_Date"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Load_Date]"
+                      lineageId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Load_Date]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ETL_Source_File]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of ETL_Source_File"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Source_File]"
+                      lineageId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Source_File]" />
+                    <inputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BIRTHDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="BIRTHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DEATHDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DEATHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SSN" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DRIVERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DRIVERS" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PASSPORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PASSPORT" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PREFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PREFIX" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIRST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="FIRST" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="LAST" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SUFFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="SUFFIX" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MAIDEN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="MAIDEN" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MARITAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="MARITAL" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RACE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETHNICITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ETHNICITY" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="GENDER" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BIRTHPLACE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="BIRTHPLACE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ADDRESS" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COUNTY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COUNTY" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="LAT" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LON]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="LON" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HEALTHCARE_EXPENSES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="HEALTHCARE_EXPENSES" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HEALTHCARE_COVERAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="HEALTHCARE_COVERAGE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INCOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="INCOME" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Load_Date]"
+                      dataType="dbTimeStamp"
+                      name="ETL_Load_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Source_File]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ETL_Source_File" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Patients CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Patients CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Patients CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Patients CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Patients CSV.Paths[Data Conversion Output]"
+              endId="Package\Load Patients CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Patients CSV\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Patients CSV.Paths[Derived Column Output]"
+              endId="Package\Load Patients CSV\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Load Patients CSV\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Patients CSV.Paths[Flat File Source Output]"
+              endId="Package\Load Patients CSV\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Patients CSV\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate STG_Patients"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E058B3E4-CB52-4C3E-9577-65E17EB9B449}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate STG_Patients"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{135C86E9-8162-4D24-8ACC-96A8E43237D2}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.STG_Patients" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E3EDFF95-8EA7-4309-A04A-405DC589516D}"
+      DTS:From="Package\Truncate STG_Patients"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Patients CSV" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Load Patients CSV"
+          TopLeft="502.499972544612,183.733332055675" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Truncate STG_Patients"
+          TopLeft="489.999973227582,44.1999996926388" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="584.649972886097,85.7999996926387">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97.933332363036"
+              Start="0,0"
+              End="0,90.433332363036">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.433332363036" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Patients CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Patients CSV\OLE DB Destination"
+          TopLeft="693.999985088905,437.399994494716" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Patients CSV\Derived Column"
+          TopLeft="583.166659202013,158.133330453502" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load Patients CSV\Data Conversion"
+          TopLeft="703.333294904896,314.599997812311" />
+        <EdgeLayout
+          Id="Package\Load Patients CSV.Paths[Derived Column Output]"
+          TopLeft="659.566659202013,199.733330453502">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121.766635702883,114.866667358809"
+              Start="0,0"
+              End="121.766635702883,107.366667358809">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.4333336794045" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.4333336794045"
+                    Point2="0,57.4333336794045"
+                    Point3="4,57.4333336794045" />
+                  <mssgle:LineSegment
+                    End="117.766635702883,57.4333336794045" />
+                  <mssgle:CubicBezierSegment
+                    Point1="117.766635702883,57.4333336794045"
+                    Point2="121.766635702883,57.4333336794045"
+                    Point3="121.766635702883,61.4333336794045" />
+                  <mssgle:LineSegment
+                    End="121.766635702883,107.366667358809" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Patients CSV.Paths[Data Conversion Output]"
+          TopLeft="780.466639996901,356.199997812311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81.1999966824054"
+              Start="0,0"
+              End="0,73.6999966824054">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.6999966824054" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load Patients CSV\Flat File Source"
+          TopLeft="567.499968993169,38.1333330681589" />
+        <EdgeLayout
+          Id="Package\Load Patients CSV.Paths[Flat File Source Output]"
+          TopLeft="643.099968993169,79.7333330681589">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.4666902088441,78.399997385343"
+              Start="0,0"
+              End="16.4666902088441,70.899997385343">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1999986926715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.1999986926715"
+                    Point2="0,39.1999986926715"
+                    Point3="4,39.1999986926715" />
+                  <mssgle:LineSegment
+                    End="12.4666902088441,39.1999986926715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.4666902088441,39.1999986926715"
+                    Point2="16.4666902088441,39.1999986926715"
+                    Point3="16.4666902088441,43.1999986926715" />
+                  <mssgle:LineSegment
+                    End="16.4666902088441,70.899997385343" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Patients CSV\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

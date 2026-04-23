@@ -1,0 +1,8 @@
+.vs/ 
+*.csv 
+*.CSV 
+bin/ 
+obj/ 
+*.user 
+*.suo 
+Source Folder/ 

@@ -1,0 +1,1613 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/21/2026 10:43:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-QBPOOF3"
+  DTS:CreatorName="DESKTOP-QBPOOF3\karan"
+  DTS:DTSID="{BF54B455-76DD-4C53-BF84-2C64ED5F18E0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{9E9A458B-3B9F-4A7C-88B5-42A8063EDAB7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[encounters.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{33CEF01C-8BED-4280-80D3-AE0F2E2B52B9}"
+      DTS:ObjectName="encounters.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\karan\source\repos\HealthETL\HealthETL\Source Folder\Landing\encounters.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{7A218F06-25A7-4CA6-87E0-B3ECDC5C97D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="START"
+              DTS:DTSID="{0090F201-1ED3-4CC6-BB5E-091BDCA77315}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STOP"
+              DTS:DTSID="{982AD852-5E0C-486D-AF40-246254C36F3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PATIENT"
+              DTS:DTSID="{8C825DD2-DE68-4B8F-9C9F-8DC982F2F782}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORGANIZATION"
+              DTS:DTSID="{98ADEB84-8895-423F-AD03-C945FEA575E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROVIDER"
+              DTS:DTSID="{05ED4783-BD9C-4335-8EC8-0E8F8A36C508}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PAYER"
+              DTS:DTSID="{542517BB-2603-49BA-8295-12ADBB9BB1CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ENCOUNTERCLASS"
+              DTS:DTSID="{C512F33F-8A81-409E-AC32-06BC95F5A1EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODE"
+              DTS:DTSID="{DAC66294-8F29-4AD4-85CD-50FEBC67A0D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESCRIPTION"
+              DTS:DTSID="{7CDBD405-F389-4143-9541-B0BA09843965}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BASE_ENCOUNTER_COST"
+              DTS:DTSID="{E74E5403-9215-481F-944B-118C2D679C08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOTAL_CLAIM_COST"
+              DTS:DTSID="{EEEC343E-92FE-47E3-8C86-A3EC88D40740}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PAYER_COVERAGE"
+              DTS:DTSID="{40F5DF29-2126-4B4C-B869-3B6FD534EC6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REASONCODE"
+              DTS:DTSID="{22FE4F00-D753-4E2F-8224-351608E98B36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REASONDESCRIPTION"
+              DTS:DTSID="{981D4724-A3B2-4DA9-A364-0811A4F2A2B0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7E49ACE0-4998-4954-9188-DC5E9C15F956}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\karan\source\repos\HealthETL\HealthETL\Source Folder\Landing\encounters.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{E21ED00B-54F4-406B-A5A5-ACF27502CA90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="START"
+              DTS:DTSID="{B1A3DB56-7700-407C-9379-5FDF34E8A1B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STOP"
+              DTS:DTSID="{EEA45A10-606A-48D8-B6C0-21F89E1CCEC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PATIENT"
+              DTS:DTSID="{C22E7680-7080-49E6-BB53-0509FF6866BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORGANIZATION"
+              DTS:DTSID="{6A5F78A3-55FE-4954-AEFB-06EB5958DD12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROVIDER"
+              DTS:DTSID="{BD508F66-DE51-44A1-9DFE-ECD89C85BCFC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PAYER"
+              DTS:DTSID="{61817563-3DF5-4709-A0B1-0C17C12DFBF7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ENCOUNTERCLASS"
+              DTS:DTSID="{B4081285-A785-4150-B7C4-4C356F458ABE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODE"
+              DTS:DTSID="{443DEE3C-03DB-4504-9332-077A48BC8107}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESCRIPTION"
+              DTS:DTSID="{F3177A81-ED13-4597-B321-E33609AE0F02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BASE_ENCOUNTER_COST"
+              DTS:DTSID="{E0A856BF-C561-4E54-8087-6BE36B27038D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOTAL_CLAIM_COST"
+              DTS:DTSID="{BE2A2908-A660-4081-8FC5-45E97F48AC2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PAYER_COVERAGE"
+              DTS:DTSID="{0C5802F8-2DF2-4244-BA19-D0618D9C8D80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REASONCODE"
+              DTS:DTSID="{69F0EBB7-8FD2-4C1A-BFA7-5070A32FFC01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REASONDESCRIPTION"
+              DTS:DTSID="{E799F825-8A1B-4F75-A469-60808FEB0FE4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{73DEC1DF-124A-4F7F-A26E-2075DB03CDF0}"
+      DTS:ObjectName="LocalHost">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=HealthDW_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{73DEC1DF-124A-4F7F-A26E-2075DB03CDF0}LocalHost;Trust Server Certificate=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0C914E76-88EF-4915-8E04-89B8324D09E6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{73DEC1DF-124A-4F7F-A26E-2075DB03CDF0}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.STG_Encounters" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Encounters CSV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3211512A-FC02-41AD-A6C0-ABE701309AEB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Encounters CSV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Encounters CSV\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Encounters CSV\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ETL_Load_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ETL_Load_Date"
+                      lineageId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Load_Date]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ETL_Source_File]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="ETL_Source_File"
+                      lineageId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Source_File]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Encounters CSV\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Load_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Load_Date]"
+                      name="Copy of ETL_Load_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Load_Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Source_File]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="14"
+                      lineageId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Source_File]"
+                      name="Copy of ETL_Source_File"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Source_File]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Encounters CSV\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Encounters CSV\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Encounters CSV\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Encounters CSV\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Load_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Load_Date]"
+                      name="ETL_Load_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Source_File]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="14"
+                      lineageId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output].Columns[ETL_Source_File]"
+                      name="ETL_Source_File"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"encounters.csv"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"encounters.csv"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Encounters CSV\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Encounters CSV\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="16393"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Encounters CSV\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[encounters.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[encounters.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[START]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[START]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[START]"
+                      name="START"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[STOP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[STOP]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[STOP]"
+                      name="STOP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PATIENT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PATIENT]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PATIENT]"
+                      name="PATIENT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ORGANIZATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORGANIZATION]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ORGANIZATION]"
+                      name="ORGANIZATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PROVIDER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PROVIDER]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PROVIDER]"
+                      name="PROVIDER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PAYER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PAYER]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PAYER]"
+                      name="PAYER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ENCOUNTERCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ENCOUNTERCLASS]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ENCOUNTERCLASS]"
+                      name="ENCOUNTERCLASS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CODE]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CODE]"
+                      name="CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DESCRIPTION]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DESCRIPTION]"
+                      name="DESCRIPTION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BASE_ENCOUNTER_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BASE_ENCOUNTER_COST]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BASE_ENCOUNTER_COST]"
+                      name="BASE_ENCOUNTER_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[TOTAL_CLAIM_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TOTAL_CLAIM_COST]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[TOTAL_CLAIM_COST]"
+                      name="TOTAL_CLAIM_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PAYER_COVERAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PAYER_COVERAGE]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PAYER_COVERAGE]"
+                      name="PAYER_COVERAGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[REASONCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[REASONCODE]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[REASONCODE]"
+                      name="REASONCODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[REASONDESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[REASONDESCRIPTION]"
+                      length="500"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[REASONDESCRIPTION]"
+                      name="REASONDESCRIPTION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[START]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="START" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[STOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="STOP" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PATIENT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PATIENT" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORGANIZATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ORGANIZATION" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PROVIDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROVIDER" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PAYER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PAYER" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ENCOUNTERCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ENCOUNTERCLASS" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BASE_ENCOUNTER_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="BASE_ENCOUNTER_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TOTAL_CLAIM_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="TOTAL_CLAIM_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PAYER_COVERAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PAYER_COVERAGE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[REASONCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="REASONCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[REASONDESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="REASONDESCRIPTION" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Encounters CSV\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[STG_Encounters]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Encounters CSV\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[START]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="START"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[START]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[START]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="STOP"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STOP]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[STOP]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PATIENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PATIENT"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PATIENT]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PATIENT]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ORGANIZATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ORGANIZATION"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORGANIZATION]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ORGANIZATION]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PROVIDER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROVIDER"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PROVIDER]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PROVIDER]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PAYER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PAYER"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAYER]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PAYER]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ENCOUNTERCLASS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ENCOUNTERCLASS"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ENCOUNTERCLASS]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ENCOUNTERCLASS]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="CODE"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODE]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CODE]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESCRIPTION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="DESCRIPTION"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BASE_ENCOUNTER_COST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="BASE_ENCOUNTER_COST"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BASE_ENCOUNTER_COST]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[BASE_ENCOUNTER_COST]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TOTAL_CLAIM_COST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="TOTAL_CLAIM_COST"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_CLAIM_COST]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[TOTAL_CLAIM_COST]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PAYER_COVERAGE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PAYER_COVERAGE"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAYER_COVERAGE]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PAYER_COVERAGE]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[REASONCODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="REASONCODE"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REASONCODE]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[REASONCODE]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[REASONDESCRIPTION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="REASONDESCRIPTION"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REASONDESCRIPTION]"
+                      lineageId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output].Columns[REASONDESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ETL_Load_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of ETL_Load_Date"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Load_Date]"
+                      lineageId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Load_Date]" />
+                    <inputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ETL_Source_File]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="Copy of ETL_Source_File"
+                      externalMetadataColumnId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Source_File]"
+                      lineageId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ETL_Source_File]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[START]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="START" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="STOP" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PATIENT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PATIENT" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORGANIZATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ORGANIZATION" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PROVIDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROVIDER" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAYER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PAYER" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ENCOUNTERCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ENCOUNTERCLASS" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BASE_ENCOUNTER_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="BASE_ENCOUNTER_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_CLAIM_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="TOTAL_CLAIM_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PAYER_COVERAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PAYER_COVERAGE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REASONCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="REASONCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REASONDESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="REASONDESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Load_Date]"
+                      dataType="dbTimeStamp"
+                      name="ETL_Load_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Source_File]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ETL_Source_File" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Encounters CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Encounters CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Encounters CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Encounters CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Encounters CSV.Paths[Data Conversion Output]"
+              endId="Package\Load Encounters CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Encounters CSV\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Encounters CSV.Paths[Derived Column Output]"
+              endId="Package\Load Encounters CSV\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Load Encounters CSV\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Encounters CSV.Paths[Flat File Source Output]"
+              endId="Package\Load Encounters CSV\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Encounters CSV\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{31C190C6-9C1E-4482-B4D3-B7CF1B0A3783}"
+      DTS:From="Package\Execute SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Encounters CSV" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="421.666643627817,56.3333329415984" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Load Encounters CSV"
+          TopLeft="430.833309793639,148.199998969436" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="508.466643627817,97.9333329415984">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.7666661658222,50.2666660278373"
+              Start="0,0"
+              End="12.7666661658222,42.7666660278373">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1333330139187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1333330139187"
+                    Point2="0,25.1333330139187"
+                    Point3="4,25.1333330139187" />
+                  <mssgle:LineSegment
+                    End="8.76666616582219,25.1333330139187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.76666616582219,25.1333330139187"
+                    Point2="12.7666661658222,25.1333330139187"
+                    Point3="12.7666661658222,29.1333330139187" />
+                  <mssgle:LineSegment
+                    End="12.7666661658222,42.7666660278373" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Encounters CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load Encounters CSV\Flat File Source"
+          TopLeft="585.833301324813,45.0666663532787" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Encounters CSV\Derived Column"
+          TopLeft="586.666634612615,120.466665828957" />
+        <EdgeLayout
+          Id="Package\Load Encounters CSV.Paths[Flat File Source Output]"
+          TopLeft="662.249967968714,86.6666663532787">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.7999994756778"
+              Start="0,0"
+              End="0,26.2999994756778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2999994756778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Encounters CSV\OLE DB Destination"
+          TopLeft="776.666624231473,256.533331549432" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load Encounters CSV\Data Conversion"
+          TopLeft="557.499969539544,239.799998499354" />
+        <EdgeLayout
+          Id="Package\Load Encounters CSV.Paths[Derived Column Output]"
+          TopLeft="663.066634612615,162.066665828957">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-27.5666650730703,77.7333326703972"
+              Start="0,0"
+              End="-27.5666650730703,70.2333326703972">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8666663351986" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.8666663351986"
+                    Point2="0,38.8666663351986"
+                    Point3="-4,38.8666663351986" />
+                  <mssgle:LineSegment
+                    End="-23.5666650730703,38.8666663351986" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.5666650730703,38.8666663351986"
+                    Point2="-27.5666650730703,38.8666663351986"
+                    Point3="-27.5666650730703,42.8666663351986" />
+                  <mssgle:LineSegment
+                    End="-27.5666650730703,70.2333326703972" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Encounters CSV.Paths[Data Conversion Output]"
+          TopLeft="713.499969539544,260.599998499354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.1666546919288,16.7333330500787"
+              Start="0,0"
+              End="55.6666546919288,16.7333330500787">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.5833273459644,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5833273459644,0"
+                    Point2="31.5833273459644,0"
+                    Point3="31.5833273459644,4" />
+                  <mssgle:LineSegment
+                    End="31.5833273459644,12.7333330500787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.5833273459644,12.7333330500787"
+                    Point2="31.5833273459644,16.7333330500787"
+                    Point3="35.5833273459644,16.7333330500787" />
+                  <mssgle:LineSegment
+                    End="55.6666546919288,16.7333330500787" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Encounters CSV\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
