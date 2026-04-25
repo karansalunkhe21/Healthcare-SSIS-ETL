@@ -1,0 +1,28 @@
+﻿
+USE HealthDW;
+SELECT TABLE_NAME 
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'dw'
+ORDER BY TABLE_NAME;
+
+
+
+USE HealthDW;
+SELECT COUNT(*) AS Total_Days FROM dw.DIM_Date;
+-- Should be around 11,323 days (2000 to 2030)
+
+SELECT TOP 3 * FROM dw.DIM_Date;
+-- Should show dates starting from 2000-01-01
+
+
+USE HealthDW;
+SELECT TABLE_NAME 
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'dw'
+ORDER BY TABLE_NAME;
+
+
+SELECT * FROM dw.DIM_Patient;
+
+SELECT COUNT(*) FROM dw.DIM_Patient 
+WHERE Is_Current = 1;
