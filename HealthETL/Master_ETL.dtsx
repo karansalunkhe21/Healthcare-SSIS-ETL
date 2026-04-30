@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-QBPOOF3"
   DTS:CreatorName="DESKTOP-QBPOOF3\karan"
-  DTS:DTSID="{0A049C20-5880-4C20-949E-5292B7245367}"
+  DTS:DTSID="{89E79C69-ED2C-4728-AAB9-7BE39A7BAC8D}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="16393"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Master_ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{49461939-12E1-441F-890D-30C35DDF88DA}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{294EE7A7-4CAE-43AC-A1A7-00BB5A268C55}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -599,6 +599,30 @@
           Size="196,41.6"
           Id="Package\Sequence Container 1\2 - Load STG Encounters"
           TopLeft="42.9333653873854,54.533331657913" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Sequence Container 1\3 - Load STG Conditions"
+          TopLeft="37.1666661658222,108.266664617592" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Sequence Container 1\4 - Load STG Observations"
+          TopLeft="28,157.66666427407" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Sequence Container 1\5 - Load STG Procedures"
+          TopLeft="39.6666660292279,205.333330609269" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Sequence Container 1\6 - Load STG Medications"
+          TopLeft="26.333333424396,257.333330247667" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Sequence Container 1\7 - Load STG Claims"
+          TopLeft="36.3333328780199,322.333329795665" />
+        <NodeLayout
+          Size="237.6,41.6"
+          Id="Package\Sequence Container 1\8 - Load STG Claims Transactions"
+          TopLeft="30.4333648410094,376.066662755344" />
         <EdgeLayout
           Id="Package\Sequence Container 1.PrecedenceConstraints[Constraint]"
           TopLeft="50.4333649776032,23.3333320195146">
@@ -633,30 +657,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Sequence Container 1\3 - Load STG Conditions"
-          TopLeft="37.1666661658222,108.266664617592" />
-        <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\Sequence Container 1\4 - Load STG Observations"
-          TopLeft="28,157.66666427407" />
-        <NodeLayout
-          Size="196,41.6"
-          Id="Package\Sequence Container 1\5 - Load STG Procedures"
-          TopLeft="39.6666660292279,205.333330609269" />
-        <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\Sequence Container 1\6 - Load STG Medications"
-          TopLeft="26.333333424396,257.333330247667" />
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Sequence Container 1\7 - Load STG Claims"
-          TopLeft="36.3333328780199,322.333329795665" />
-        <NodeLayout
-          Size="237.6,41.6"
-          Id="Package\Sequence Container 1\8 - Load STG Claims Transactions"
-          TopLeft="30.4333648410094,376.066662755344" />
         <EdgeLayout
           Id="Package\Sequence Container 1.PrecedenceConstraints[Constraint 1]"
           TopLeft="238.933365387385,75.333331657913">
@@ -851,10 +851,6 @@
           Id="Package\Sequence Container 1"
           TopLeft="89.1666617948151,113.533332543837" />
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Sequence Container 2\9  - Load DIM Patient"
-          TopLeft="28,16.7999992767969" />
-        <NodeLayout
           Size="185.6,41.6"
           Id="Package\Sequence Container 2\10 - Load DIM Provider"
           TopLeft="28.5000002731875,79.8885091368539" />
@@ -874,6 +870,10 @@
           Size="173.6,41.6"
           Id="Package\Sequence Container 2\14 - Load DIM Payer"
           TopLeft="30.1666684879192,326.555174296848" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Sequence Container 2\9  - Load DIM Patient"
+          TopLeft="28,16.7999992767969" />
         <EdgeLayout
           Id="Package\Sequence Container 2.PrecedenceConstraints[Constraint]"
           TopLeft="28,37.5999992767969">

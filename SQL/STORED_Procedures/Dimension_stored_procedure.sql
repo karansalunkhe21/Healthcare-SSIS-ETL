@@ -158,22 +158,3 @@ END;
 GO
 
 
-USE HealthDW;
-EXEC dw.usp_Load_DIM_Provider;
-EXEC dw.usp_Load_DIM_Facility;
-EXEC dw.usp_Load_DIM_Diagnosis;
-EXEC dw.usp_Load_DIM_Procedure;
-EXEC dw.usp_Load_DIM_Payer;
-
-
-SELECT 'DIM_Patient'   AS DimName, COUNT(*) AS Rows FROM dw.DIM_Patient
-UNION ALL
-SELECT 'DIM_Provider',              COUNT(*) FROM dw.DIM_Provider
-UNION ALL
-SELECT 'DIM_Facility',              COUNT(*) FROM dw.DIM_Facility
-UNION ALL
-SELECT 'DIM_Diagnosis',             COUNT(*) FROM dw.DIM_Diagnosis
-UNION ALL
-SELECT 'DIM_Procedure',             COUNT(*) FROM dw.DIM_Procedure
-UNION ALL
-SELECT 'DIM_Payer',                 COUNT(*) FROM dw.DIM_Payer;
